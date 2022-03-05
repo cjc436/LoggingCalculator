@@ -11,7 +11,7 @@ public class LoggingCalculatorClient extends Application {
     @Override
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(LoggingCalculatorClient.class.getResource("calculator-view.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 600, 600);
+        Scene scene = new Scene(fxmlLoader.load(), 550, 580);
         stage.setTitle("Logging Calculator");
         stage.setScene(scene);
         stage.show();
