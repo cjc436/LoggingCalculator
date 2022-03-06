@@ -1,21 +1,14 @@
 package com.example.loggingcalculator;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class CalculatorSystem {
     private String currentExpression = "";
     private String num1 = "";
     private String operator = "";
     private String num2 = "";
 
-    static List<String> logOfEvaluations = new ArrayList<>();
-
-    public CalculatorSystem() {
-    }
+    public CalculatorSystem() {}
 
     public String getDisplayNumber() {
-        System.out.println(this);
         if (num2.length() == 0) {
             return num1;
         } else {
@@ -82,9 +75,7 @@ public class CalculatorSystem {
     }
 
     public void undo() {
-        System.out.println(this);
-        currentExpression = currentExpression.substring(0,currentExpression.length()-2);
-        System.out.println(this);
+        currentExpression = currentExpression.substring(0,currentExpression.length()-1);
     }
 
     public String finalEvaluation() {
@@ -92,7 +83,7 @@ public class CalculatorSystem {
         if (!evaluate())
             return null;
         String result = num1;
-        logOfEvaluations.add(currentExpression + num1);
+        ServerHandler.sendMessage(currentExpression + num1);
         this.reset();
         return result;
     }

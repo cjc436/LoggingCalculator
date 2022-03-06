@@ -5,7 +5,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-import java.io.IOException;
+import java.io.*;
 
 public class LoggingCalculatorClient extends Application {
     @Override
@@ -14,6 +14,7 @@ public class LoggingCalculatorClient extends Application {
         Scene scene = new Scene(fxmlLoader.load(), 550, 580);
         stage.setTitle("Logging Calculator");
         stage.setScene(scene);
+        stage.setOnCloseRequest(event -> ServerHandler.sendClose());
         stage.show();
     }
 
