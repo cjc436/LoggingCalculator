@@ -18,7 +18,7 @@ public class RequestHandler extends Thread {
             ObjectInputStream ois = new ObjectInputStream(clientSocket.getInputStream());
             try {
                 if (!ois.readBoolean()); {
-                    System.out.println("\nClient Closed:\nThere were " + localLogs.size() + " successful logs. Here are the logs:");
+                    System.out.println("\nClient Closed:\nThere were " + localLogs.size() + " successful log(s). Here are the logs:");
                     for (String log : localLogs) {
                         System.out.println(log);
                     }
